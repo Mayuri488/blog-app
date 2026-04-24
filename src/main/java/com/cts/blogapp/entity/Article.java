@@ -1,0 +1,65 @@
+package com.cts.blogapp.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.apache.catalina.User;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "article")
+@Getter
+@Setter
+public class Article {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String title;
+
+    private String shortDesc;
+
+    //@Column(name = "article_content",nullable = false,length = 235425)
+    @Lob
+    private String content;
+
+    private Boolean paid;
+
+    @Enumerated(EnumType.STRING)
+    private Status status=Status.DRAFT;
+
+    private LocalDateTime publishedAt;
+    private LocalDateTime createdAt;
+
+    private Double rating;
+    private Double price;
+    private Integer readingMinutes;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private  Category category;
+
+    /*@ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;*/
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", shortDesc='" + shortDesc + '\'' +
+                ", content='" + content + '\'' +
+                ", paid=" + paid +
+                ", status=" + status +
+                ", publishedAt=" + publishedAt +
+                ", createdAt=" + createdAt +
+                ", rating=" + rating +
+                ", price=" + price +
+                ", readingMinutes=" + readingMinutes +
+                ", category=" + category +
+                '}';
+    }
+}
