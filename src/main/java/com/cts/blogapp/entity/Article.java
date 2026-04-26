@@ -3,8 +3,6 @@ package com.cts.blogapp.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
-import org.apache.catalina.User;
 
 import java.time.LocalDateTime;
 
@@ -41,9 +39,9 @@ public class Article {
     @JoinColumn(name = "category_id")
     private  Category category;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;*/
+    private User user;
 
     @Override
     public String toString() {
