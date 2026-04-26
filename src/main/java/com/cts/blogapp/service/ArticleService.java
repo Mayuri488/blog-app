@@ -9,5 +9,6 @@ public interface ArticleService {
     public ArticleDto createArticle(ArticleDto articleDto);
     public List<ArticleDto> getArticles();
     public ArticleDto findById(Long articleId);
+    void deleteArticle(Long articleId);
 
 }

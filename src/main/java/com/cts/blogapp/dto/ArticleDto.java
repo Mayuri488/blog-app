@@ -22,7 +22,6 @@ public class ArticleDto {
     //update only:
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private  Long categoryId;
-
-    private CategoryDto category;
+    
 
 }

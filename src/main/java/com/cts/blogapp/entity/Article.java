@@ -43,21 +43,5 @@ public class Article {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", shortDesc='" + shortDesc + '\'' +
-                ", content='" + content + '\'' +
-                ", paid=" + paid +
-                ", status=" + status +
-                ", publishedAt=" + publishedAt +
-                ", createdAt=" + createdAt +
-                ", rating=" + rating +
-                ", price=" + price +
-                ", readingMinutes=" + readingMinutes +
-                ", category=" + category +
-                '}';
-    }
+
 }

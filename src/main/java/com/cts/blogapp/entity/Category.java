@@ -22,13 +22,8 @@ public class Category {
     @Column(name = "category_name", unique = true, nullable = false)
     private String name;
 
-/*    @OneToMany(mappedBy = "category")
-    private List<Article> articles=new ArrayList<>();*/
+    @OneToMany(mappedBy = "category")
+    private List<Article> articles=new ArrayList<>();
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                ", name='" + name +
-                '}';
-    }
+
 }
